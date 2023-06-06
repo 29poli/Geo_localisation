@@ -1,0 +1,23 @@
+from google.colab import drive
+drive.mount('/content/drive')
+
+cd /content/drive/MyDrive/Project_6/CosPlace-main/
+
+
+!pip install -r requirements.txt
+
+
+!unzip "/content/drive/MyDrive/Project_6/sf_xs.zip" -d "/content/drive/MyDrive/Project_6/sf_xs/"
+
+
+
+!python3 train.py --dataset_folder /content/drive/MyDrive/path_to_the_dataset/  --groups_num 1 --epochs_num 3 --num_workers 2 --use_amp16
+# we had to use "amp16" due to google colab limitations
+
+
+! python3 train.py -h
+# it shows all the hyper parameters
+
+
+# To eval the performance of our model with different dataset
+! python3 eval.py --dataset_folder /content/drive/MyDrive/path_to_the_dataset/ --backbone ResNet18 --fc_output_dim 512 --num_workers 2 --resume_model /content/drive/MyDrive/Path_to_the_model/name_of_the_model.pth

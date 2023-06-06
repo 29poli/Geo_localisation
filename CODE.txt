@@ -1,3 +1,8 @@
+# https://github.com/gmberton/CosPlace
+# the whole project refers to this Github repository
+
+
+
 from google.colab import drive
 drive.mount('/content/drive')
 

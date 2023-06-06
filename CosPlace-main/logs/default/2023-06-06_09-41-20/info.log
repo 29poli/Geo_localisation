@@ -1,0 +1,26 @@
+2023-06-06 09:41:21   eval.py --dataset_folder /content/drive/MyDrive/Project_6/tokyo_xs/ --backbone ResNet18 --fc_output_dim 512 --num_workers 2 --resume_model /content/drive/MyDrive/Project_6/Models/cosface_loss_baseline/best_model.pth
+2023-06-06 09:41:21   Arguments: Namespace(M=10, alpha=30, N=5, L=2, groups_num=8, min_images_per_class=10, backbone='ResNet18', fc_output_dim=512, use_amp16=False, augmentation_device='cuda', batch_size=32, epochs_num=50, iterations_per_epoch=10000, lr=1e-05, classifiers_lr=0.01, brightness=0.7, contrast=0.7, hue=0.5, saturation=0.7, random_resized_crop=0.5, infer_batch_size=16, positive_dist_threshold=25, resume_train=None, resume_model='/content/drive/MyDrive/Project_6/Models/cosface_loss_baseline/best_model.pth', device='cuda', seed=0, num_workers=2, num_preds_to_save=0, save_only_wrong_preds=False, dataset_folder='/content/drive/MyDrive/Project_6/tokyo_xs/', save_dir='default', test_set_folder='/content/drive/MyDrive/Project_6/tokyo_xs/test', output_folder='logs/default/2023-06-06_09-41-20')
+2023-06-06 09:41:21   The outputs are being saved in logs/default/2023-06-06_09-41-20
+2023-06-06 09:41:21   There are 0 GPUs and 2 CPUs.
+2023-06-06 09:41:21   Loading model from /content/drive/MyDrive/Project_6/Models/cosface_loss_baseline/best_model.pth
+2023-06-06 09:41:23   
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/Project_6/CosPlace-main/eval.py", line 32, in <module>
+    model_state_dict = torch.load(args.resume_model)
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 809, in load
+    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 1172, in _load
+    result = unpickler.load()
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 1142, in persistent_load
+    typed_storage = load_tensor(dtype, nbytes, key, _maybe_decode_ascii(location))
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 1116, in load_tensor
+    wrap_storage=restore_location(storage, location),
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 217, in default_restore_location
+    result = fn(storage, location)
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 182, in _cuda_deserialize
+    device = validate_cuda_device(location)
+  File "/usr/local/lib/python3.10/dist-packages/torch/serialization.py", line 166, in validate_cuda_device
+    raise RuntimeError('Attempting to deserialize object on a CUDA '
+RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+
+2023-06-06 09:41:23   Experiment finished (with some errors)

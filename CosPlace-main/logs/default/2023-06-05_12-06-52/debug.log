@@ -1,0 +1,7 @@
+2023-06-05 12:06:52   eval.py --dataset_folder /content/drive/MyDrive/Project_6/tokyo_xs/ --saturation 0.5 --backbone ResNet18 --fc_output_dim 512 --num_workers 2 --resume_model /content/drive/MyDrive/Project_6/Models/cosface_loss_baseline/best_model.pth
+2023-06-05 12:06:52   Arguments: Namespace(M=10, alpha=30, N=5, L=2, groups_num=8, min_images_per_class=10, backbone='ResNet18', fc_output_dim=512, use_amp16=False, augmentation_device='cuda', batch_size=32, epochs_num=50, iterations_per_epoch=10000, lr=1e-05, classifiers_lr=0.01, brightness=0.7, contrast=0.7, hue=0.5, saturation=0.5, random_resized_crop=0.5, infer_batch_size=16, positive_dist_threshold=25, resume_train=None, resume_model='/content/drive/MyDrive/Project_6/Models/cosface_loss_baseline/best_model.pth', device='cuda', seed=0, num_workers=2, num_preds_to_save=0, save_only_wrong_preds=False, dataset_folder='/content/drive/MyDrive/Project_6/tokyo_xs/', save_dir='default', test_set_folder='/content/drive/MyDrive/Project_6/tokyo_xs/test', output_folder='logs/default/2023-06-05_12-06-52')
+2023-06-05 12:06:52   The outputs are being saved in logs/default/2023-06-05_12-06-52
+2023-06-05 12:06:52   Train only layer3 and layer4 of the ResNet18, freeze the previous ones
+2023-06-05 12:06:52   There are 1 GPUs and 2 CPUs.
+2023-06-05 12:06:52   Loading model from /content/drive/MyDrive/Project_6/Models/cosface_loss_baseline/best_model.pth
+2023-06-05 12:06:55   Extracting database descriptors for evaluation/testing

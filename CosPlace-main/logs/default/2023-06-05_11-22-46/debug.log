@@ -1,0 +1,34 @@
+2023-06-05 11:22:47   train.py --dataset_folder /content/drive/MyDrive/Project_6/sf_xs/sf_xs/ --groups_num 1 --epochs_num 3 --num_workers 2 --use_amp16
+2023-06-05 11:22:47   Arguments: Namespace(M=10, alpha=30, N=5, L=2, groups_num=1, min_images_per_class=10, backbone='ResNet18', fc_output_dim=512, use_amp16=True, augmentation_device='cuda', batch_size=32, epochs_num=3, iterations_per_epoch=10000, lr=1e-05, classifiers_lr=0.01, brightness=0.7, contrast=0.7, hue=0.5, saturation=0.7, random_resized_crop=0.5, infer_batch_size=16, positive_dist_threshold=25, resume_train=None, resume_model=None, device='cuda', seed=0, num_workers=2, num_preds_to_save=0, save_only_wrong_preds=False, dataset_folder='/content/drive/MyDrive/Project_6/sf_xs/sf_xs/', save_dir='default', train_set_folder='/content/drive/MyDrive/Project_6/sf_xs/sf_xs/train', val_set_folder='/content/drive/MyDrive/Project_6/sf_xs/sf_xs/val', test_set_folder='/content/drive/MyDrive/Project_6/sf_xs/sf_xs/test', output_folder='logs/default/2023-06-05_11-22-46')
+2023-06-05 11:22:47   The outputs are being saved in logs/default/2023-06-05_11-22-46
+2023-06-05 11:22:48   Train only layer3 and layer4 of the ResNet18, freeze the previous ones
+2023-06-05 11:22:48   There are 1 GPUs and 2 CPUs.
+2023-06-05 11:22:49   Using cached dataset cache/_M10_N5_mipc10.torch
+2023-06-05 11:22:53   Using 1 groups
+2023-06-05 11:22:53   The 1 groups have respectively the following number of classes [5965]
+2023-06-05 11:22:53   The 1 groups have respectively the following number of images [59650]
+2023-06-05 11:25:13   Validation set: < val - #q: 7993; #db: 8015 >
+2023-06-05 11:25:13   Test set: < test - #q: 1000; #db: 27191 >
+2023-06-05 11:25:13   Start training ...
+2023-06-05 11:25:13   There are 5965 classes for the first group, each epoch has 10000 iterations with batch_size 32, therefore the model sees each class (on average) 53.6 times per epoch
+2023-06-05 11:35:51   
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/Project_6/CosPlace-main/train.py", line 115, in <module>
+    images, targets, _ = next(dataloader_iterator)
+  File "/content/drive/MyDrive/Project_6/CosPlace-main/commons.py", line 21, in __next__
+    batch = next(self.dataset_iterator)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py", line 1328, in _next_data
+    idx, data = self._get_data()
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py", line 1284, in _get_data
+    success, data = self._try_get_data()
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+
+2023-06-05 11:35:51   Experiment finished (with some errors)
